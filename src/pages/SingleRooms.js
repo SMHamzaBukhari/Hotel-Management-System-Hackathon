@@ -31,7 +31,7 @@ const SingleRooms = () => {
     <>
       <StyledHero img={defaultBcg[0]}>
         <Banner title={`${name} room`}>
-          <Link to="/rooms" className="btn btn-primary">
+          <Link to="/rooms" style={{backgroundColor:"yellow"}} className="btn btn-warning">
             Back To Rooms
           </Link>
         </Banner>
@@ -61,7 +61,9 @@ const SingleRooms = () => {
                 <h3>Details</h3>
                 <p>{description}</p>
               </article>
-              <article className="info">
+            </div>
+            <div>
+            <article className="info">
                 <h3>Info</h3>
                 <h6>price : Rs{price}</h6>
                 <h6>size : {size} SQFT</h6>
@@ -86,7 +88,8 @@ const SingleRooms = () => {
                 <div className="col-md-3 col-12 ml-auto">
                   <Link
                     to={`/booknow/${slug}`}
-                    className="btn btn-outline-primary btn-block btn-lg float-right "
+                    className="btn btn-primary btn-block btn-lg float-right "
+                    style={{backgroundColor:"yellow",color:"black"}}
                   >
                     Book Now
                   </Link>

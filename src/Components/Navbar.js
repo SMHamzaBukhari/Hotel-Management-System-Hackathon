@@ -1,7 +1,7 @@
   import React from "react";
   import { NavLink, useNavigate } from "react-router-dom";
   import { FaAlignRight } from "react-icons/fa";
-  import { useUserAuth } from "../contexts/UserAuthContext";
+  import { useUserAuth } from "../config/UserAuthContext";
 
   const Navbar = () => {
     const { user, logOut } = useUserAuth();
@@ -17,14 +17,14 @@
     }
     return (
       <>
-        <nav className="navbar navbar-expand-sm navbar-dark bg-transparent py-2 fixed-top scrolled">
+        <nav style={{background: "rgb(245,233,59)",background: "linear-gradient(90deg, rgba(245,233,59,1) 0%, rgba(255,224,32,1) 50%, rgba(252,176,69,1) 100%)"}} className="navbar navbar-expand-sm bg-transparent py-2 fixed-top scrolled">
           <div className="container-fluid ">
             <span
               className="navbar-brand font-weight-bolder"
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", color:"black" }}
               onClick={() => navigate("/")}
             >
-              Hotel.
+              HB HOTEL
             </span>
             <a
               href="void(0)"
@@ -71,16 +71,7 @@
                     About
                   </NavLink>
                 </li>
-                <li className="nav-item">
-                  <NavLink
-                    className="nav-link"
-                  //   activeClassName="active_class"
-                    exact="true"
-                    to="/contact-us"
-                  >
-                    Contact
-                  </NavLink>
-                </li>
+             
 
                 {user ? (
                   <>
@@ -120,7 +111,7 @@
                         exact="true"
                         to="/signin"
                       >
-                        <button type="button" className="btn btn-outline-success">
+                        <button type="button" className="btn btn-success">
                           Log in
                         </button>
                       </NavLink>
@@ -133,7 +124,7 @@
                         exact="true"
                         to="/signup"
                       >
-                        <button type="button" className="btn btn-outline-danger">
+                        <button type="button" className="btn btn-danger">
                           Sign up
                         </button>
                       </NavLink>

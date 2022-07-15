@@ -57,9 +57,7 @@ h6 {
   text-decoration: none;
   letter-spacing: var(--mainSpacing);
   color: white;
-  background: var(--primaryColor);
   padding: 0.4rem 0.9rem;
-  border: 3px solid var(--primaryColor);
   transition: var(--mainTransition);
   text-transform: uppercase;
   cursor: pointer;
@@ -83,9 +81,7 @@ label {
   font-weight: bold;
   letter-spacing: var(--mainSpacing);
   color: white;
-  background: var(--primaryColor);
   padding: 0.4rem 0.9rem;
-  border: 3px solid var(--primaryColor);
   transition: var(--mainTransition);
   text-transform: uppercase;
   cursor: pointer;
@@ -142,6 +138,7 @@ label {
   -moz-transition: 0.5s linear;
   -ms-transition: 0.5s linear;
   -o-transition: 0.5s linear;
+  color: black;
 }
 .bg-transparent.scrolled {
   background-color: black !important;
@@ -189,17 +186,12 @@ input[type="number"]:focus,
 .defaultHero,
 .roomsHero {
   min-height: calc(100vh - 0px);
-  background: url("https://vistapointe.net/images/hotel-1.jpg")
-    center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-.roomsHero {
-  background-image: url("https://www.berjayahotel.com/sites/default/files/colombo_30.jpg");
-  min-height: calc(100vh - 0px);
-}
+
 .singleRoom {
   background-image: url("./images/room-3.jpeg");
   min-height: calc(100vh - 0px);
@@ -233,7 +225,7 @@ input[type="number"]:focus,
 .banner div {
   width: 10rem;
   height: 5px;
-  background: var(--primaryColor);
+  background: yellow;
   margin: 1.7rem auto;
 }
 .banner p {
@@ -272,7 +264,7 @@ input[type="number"]:focus,
   width: 5rem;
   height: 5px;
   margin: 0 auto;
-  background: var(--primaryColor);
+  background: gold;
 }
 /* end of Title */
 
@@ -281,13 +273,13 @@ input[type="number"]:focus,
   padding: 3rem 0;
 }
 .services {
-  background: #ebf5fb;
+  background: #faffae;
   text-align: center;
 }
 
 .service span {
   display: inline-block;
-  color: var(--primaryColor);
+  color: gold;
   font-size: 80px;
   margin-bottom: 1.5rem;
   transition: 1s linear;
@@ -296,13 +288,7 @@ input[type="number"]:focus,
   -ms-transition: 1s linear;
   -o-transition: 1s linear;
 }
-.services span:hover {
-  transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-}
+
 .services h6 {
   letter-spacing: var(--mainSpacing);
   font-weight: 1000;
@@ -426,10 +412,7 @@ input[type="number"]:focus,
   grid-template-columns: 1fr;
   margin: 2rem auto;
 }
-.desc,
-.info {
-  margin: 1rem 0;
-}
+
 .desc h3 {
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
@@ -473,9 +456,7 @@ input[type="number"]:focus,
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2rem;
   }
-  .info {
-    padding-left: 3rem;
-  }
+  
 }
 /* end of single room*/
 /* roomlist */

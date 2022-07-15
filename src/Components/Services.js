@@ -1,18 +1,21 @@
 import React from 'react'
-import { FaCocktail, FaHiking, FaShuttleVan, FaBeer } from "react-icons/fa";
+import { FaSwimmingPool, FaWeightHanging, FaShuttleVan, FaBeer } from "react-icons/fa";
+
+
+
 import Title from './Title';
 
 const Services = () => {
     const service = {
       services: [
         {
-          icon: <FaCocktail />,
-          title: "Free CockTail",
+          icon: <FaSwimmingPool />,
+          title: "Free Swimming Pool",
           info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur",
         },
         {
-          icon: <FaHiking />,
-          title: "Endless Hiking",
+          icon: <FaWeightHanging />,
+          title: "24/7 GYM",
           info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur",
         },
         {
@@ -20,11 +23,7 @@ const Services = () => {
           title: "Free Shuttle",
           info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur",
         },
-        {
-          icon: <FaBeer />,
-          title: "Unlimited Beer",
-          info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur",
-        },
+       
       ],
     };
     return (

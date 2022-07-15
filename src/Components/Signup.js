@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, Alert } from "react-bootstrap";
-import { useUserAuth } from "../contexts/UserAuthContext";
+import { useUserAuth } from "../config/UserAuthContext";
 import styled from "styled-components";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
@@ -47,7 +47,7 @@ const Signup = () => {
 
   return (
     <>
-      <div className="p-4 box" style={{ width: "70%", margin: "100px auto" }}>
+      <div className="p-4 box" style={{ width: "70%", margin: "100px auto", boxShadow:"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" }}>
         <h2 className="mb-3">Create your account.</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
@@ -85,7 +85,7 @@ const Signup = () => {
           </Form.Group>
 
           <div className="d-grid gap-2">
-            <Button variant="primary" type="Submit">
+            <Button style={{backgroundColor:"yellow",color:'black'}} variant="primary" type="Submit">
               Sign up
             </Button>
           </div>

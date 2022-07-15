@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, Alert } from "react-bootstrap";
 import GoogleButton from "react-google-button";
-import { useUserAuth } from "../contexts/UserAuthContext";
+import { useUserAuth } from "../config/UserAuthContext";
 import styled from "styled-components";
 
 const Button = styled.button`

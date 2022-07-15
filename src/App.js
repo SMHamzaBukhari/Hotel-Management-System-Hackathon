@@ -6,7 +6,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import "./App.css";
 import Navbar from "./Components/Navbar";
-import { db } from "./firebase";
+import { db } from "./config/firebase";
 import Home from "./pages/Home";
 import { ReadFromFirebase } from "./Redux/actions";
 import Login from "./Components/Login";
@@ -15,8 +15,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Error from "./pages/Error";
 import Bookings from "./Components/bookings";
-import ProtectedRoute from "./Components/ProtectedRoute";
-import { UserAuthContextProvider } from "./contexts/UserAuthContext";
+import { UserAuthContextProvider } from "./config/UserAuthContext";
 import Rooms from "./pages/Rooms";
 import SingleRooms from "./pages/SingleRooms";
 import Booknow from "./pages/Booknow";
@@ -70,18 +69,18 @@ function App() {
             <Route
               path="/bookings"
               element={
-                <ProtectedRoute>
-                  {" "}
-                  <Bookings />{" "}
-                </ProtectedRoute>
+               
+                
+                  <Bookings />
+                
               }
             />
             <Route
               path="/booknow/:slug"
               element={
-                <ProtectedRoute>
+               
                   <Booknow />
-                </ProtectedRoute>
+              
               }
             />
             <Route path="/contact-us" element={<Contact />} />

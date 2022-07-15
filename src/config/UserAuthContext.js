@@ -9,7 +9,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 
-import { auth, db } from "../firebase";
+import { auth, db } from "./firebase";
 
 import { child, get, ref, set } from "firebase/database";
 import { uid } from "uid";

@@ -2,9 +2,9 @@ import { onValue, ref, remove } from "firebase/database";
 import React, { useState } from "react";
 import Table from "react-bootstrap/Table";
 import { AiOutlineDelete } from "react-icons/ai";
-import { db } from "../firebase";
+import { db } from "../config/firebase";
 import { Link } from "react-router-dom";
-import { useUserAuth } from "../contexts/UserAuthContext";
+import { useUserAuth } from "../config/UserAuthContext";
 import styled from "styled-components";
 
 const StatusTD = styled.td`

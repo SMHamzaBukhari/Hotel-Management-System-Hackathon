@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import moment from "moment";
+import {moment} from "moment";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { ref, set } from "firebase/database";
-import { db } from "../firebase";
+import { db } from "../config/firebase";
 import { uid } from "uid";
 import { useSelector } from "react-redux";
-import { useUserAuth } from "../contexts/UserAuthContext";
+import { useUserAuth } from "../config/UserAuthContext";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
@@ -50,11 +50,11 @@ export default function Booknow() {
     setEndDate(date);
   }
 
-  function calculateDaysLeft(startDate, endDate) {
-    if (!moment.isMoment(startDate)) startDate = moment(startDate);
-    if (!moment.isMoment(endDate)) endDate = moment(endDate);
-    return endDate.diff(startDate, "days");
-  }
+  // function calculateDaysLeft(startDate, endDate) {
+  //   if (!moment.isMoment(startDate)) startDate = moment(startDate);
+  //   if (!moment.isMoment(endDate)) endDate = moment(endDate);
+  //   return endDate.diff(startDate, "days");
+  // }
 
   function getRoom(arg) {
     const idiRooms = state[0].rooms.map((item) => item);
@@ -63,7 +63,7 @@ export default function Booknow() {
   }
 
   const room = getRoom(slug);
-  var daysLeft = calculateDaysLeft(startDate, endDate);
+  // var daysLeft = calculateDaysLeft(startDate, endDate);
 
   const formattedDate = startDate
     .toLocaleDateString("en-GB", {
@@ -112,9 +112,7 @@ export default function Booknow() {
     if (persons > capacity) {
       return alert("Please check the capacity of Room.");
     }
-    if (daysLeft === 0) {
-      return alert("Please select the dates.");
-    }
+   
     if (
       fullNmae &&
       address &&
@@ -135,8 +133,8 @@ export default function Booknow() {
         type: name,
         startDate: formattedDate,
         endDate: formattedEndDate,
-        totalPrice: daysLeft * price,
-        days: daysLeft,
+        totalPrice:price,
+       
         capacity,
         status : "Pending",
         id: uuid,
@@ -208,7 +206,7 @@ export default function Booknow() {
                 <DatePicker
                   selected={startDate}
                   onChange={handleChangeStart}
-                  minDate={moment().toDate()}
+                  // minDate={moment().toDate()}
                   className="form-control"
                   required
                 />
@@ -221,7 +219,7 @@ export default function Booknow() {
                 </label>
                 <DatePicker
                   selected={endDate}
-                  minDate={moment().toDate()}
+                  // minDate={moment().toDate()}
                   onChange={handleChangeEnd}
                   className="form-control"
                 />
@@ -230,9 +228,7 @@ export default function Booknow() {
           </div>
           <div className="row">
             <div className="col-md-6 col-12">
-              <h6 className="font-weight-bolder">
-                Number of days : {daysLeft}
-              </h6>
+             
               <mark>Please make sure Checkin time is from 9 am to 12 pm</mark>
             </div>
             <div className="col-md-6 col-12">
@@ -242,7 +238,7 @@ export default function Booknow() {
               </h6>
               <h6 className="font-weight-bold">
                 Total Price to be paid :{" "}
-                <span className="text-primary">Rs {daysLeft * price}</span>
+                <span className="text-primary">Rs {price}</span>
               </h6>
             </div>
           </div>
@@ -322,7 +318,7 @@ export default function Booknow() {
                   <div className="form-group form-check"></div>
                 </form>
                 <button
-                  className="btn btn-block btn-outline-primary"
+                  className="btn btn-block btn-warning"
                   //   data-toggle="modal"
                   //   data-target="#thanks"
                   onClick={writeToDatabase}
